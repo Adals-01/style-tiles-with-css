@@ -1,8 +1,11 @@
 /* change these */
-
+@import url("https://use.typekit.net/ocr6qvl.css");
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic,800italic,400,800");
 /* @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap'); */
-@import url("https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic");
+
+
+
 
 * {
   box-sizing: border-box;
@@ -14,18 +17,164 @@ use the fonts in other ways in the font hierarchy etc. */
 
 /* change these */
 :root {
-  --bg-color: red;
-  --link-color: green;
-  --link-hover-color: blue;
-  --color-4: hotpink;
-  --color-5: rebeccapurple;
-
-  --primary-font: "Open Sans", sans-serif;
+  --bg-color: ghostWhite;
+  --link-color: rgb(36, 36, 36);
+  --link-hover-color: tomato;
+  --color-4: black;
+  --color-5: white;
+  --primary-font: "mrs-eaves-roman-all-petite-c", sans-serif;
+  --font-style: normal;
+  --text-transform: lowercase;
   --secondary-font: "Droid Serif", serif;
-  --main-text-color: #000;
-
+  --main-text-color: #dar;
   --white-space: 1rem;
 }
+
+/* burger menu animation */
+
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 1em;
+  left: 1px;  */
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: tomato;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 50vw;
+  margin: -10vw -20vw 0vw 0vw;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.4s ease-in-out;
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+  display: flex;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+/*Buttons animation*/
 
 button {
   transition: all 3s;
@@ -35,7 +184,7 @@ a {
 }
 button:hover {
   background-color: var(--link-hover-color);
-  transform: scale(3) rotate(40deg);
+  transform: scale(1.03);
 }
 
 button:active {
@@ -44,7 +193,6 @@ button:active {
 
 a:hover {
   color: var(--link-hover-color);
-  font-size: 4rem;
 }
 html {
   font-size: 100%;
@@ -71,18 +219,20 @@ footer {
 }
 
 .header-wrapper h1 {
+  color: var(--link-color);
+  border-bottom: 0.03em var(--link-color) solid ;
+  font-family: "mrs-eaves-roman-all-petite-c", sans-serif;
+  font-weight: 200;
+  font-style: normal;
   font-size: 3rem;
   text-transform: uppercase;
-  letter-spacing: -2px;
   padding-right: 0.75em;
-  font-weight: bold;
-  color: white;
+  color: var(--link-color);
 }
 
-.header-wrapper h2 {
+.header-wrapper h2 {color:var(--link-color);
   font-size: 1.6em;
-  color: rgba(255, 255, 255, 0.95);
-  font-weight: bold;
+  color: black;
   margin: var(--white-space) 0;
 }
 
@@ -116,6 +266,7 @@ ul {
 }
 
 .swatches li {
+ border: 1px solid black;
   margin-right: 5vw;
   height: 15vw;
   width: 20%;
@@ -141,9 +292,9 @@ ul li:last-child {
   background-color: var(--color-4);
 }
 
-.color-swatch-5 {
+/* .color-swatch-5 {
   background-color: var(--color-5);
-}
+} */
 
 .textures li {
   height: 30vw;
@@ -178,31 +329,32 @@ ul li:last-child {
   margin-bottom: 1rem;
 }
 
+/*button styling*/
+
 button {
-  padding: 1rem;
-  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.2em;
   background: var(--link-color);
   text-align: center;
   text-decoration: none;
-  font: bold 1.25em/1 var(--primary-font);
-  letter-spacing: 1px;
+  font: 1.25em/1 var(--primary-font);
+  letter-spacing: 0.03em;
   color: white;
   text-transform: uppercase;
-  text-shadow: 0px -1px 0px #0374a0;
   transition: all 0.2s ease;
   cursor: pointer;
-  margin: 0 1rem 1rem 0;
+  margin: 1em 1em 1em 0em;
 }
 
 .secondary-button {
   background: var(--color-5);
+  color: black;
 }
 
 button:focus,
 button:active,
 button:focus-within {
   outline: 0;
-  border-radius: 4px;
 }
 
 .typography-main {
@@ -210,8 +362,8 @@ button:focus-within {
 }
 
 .h1-sample {
+  border-bottom: 0.03em var(--link-color) solid ;
   font-size: 2.4rem;
-  font-weight: bold;
 }
 
 .h2-sample {
@@ -237,7 +389,6 @@ em {
 a {
   font-family: var(--primary-font);
   color: var(--link-color);
-  font-weight: bold;
   text-decoration: none;
   transition: all 0.2s;
 }
