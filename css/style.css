@@ -33,13 +33,10 @@ use the fonts in other ways in the font hierarchy etc. */
 /* burger menu animation */
 
 #menuToggle
-{
+{border: 1px solid black;
   display: block;
   position: relative;
-  top: 1em;
-  left: 1px;  
   z-index: 1;
-  
   -webkit-user-select: none;
   user-select: none;
 }
@@ -48,15 +45,8 @@ use the fonts in other ways in the font hierarchy etc. */
 {
   text-decoration: none;
   color: #232323;
-  
   transition: color 0.3s ease;
 }
-
-#menuToggle a:hover
-{
-  color: tomato;
-}
-
 
 #menuToggle input
 {
@@ -66,12 +56,9 @@ use the fonts in other ways in the font hierarchy etc. */
   position: absolute;
   top: -10px;
   left: -5px;
-  
   cursor: pointer;
-  
   opacity: 0; /* hide this */
   z-index: 2; /* and place it over the hamburger */
-  
   -webkit-touch-callout: none;
 }
 
