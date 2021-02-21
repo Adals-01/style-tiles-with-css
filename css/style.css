@@ -48,14 +48,14 @@ nav a {
 }
 ul {padding: 0vw;}
 
-
 nav {display: block}
 
 .logo {
   display: block;
-  max-width: 16em;
+  max-width: 18em;
   float: right;
 }
+
 
 /* burger menu animation */
 #menuToggle
@@ -178,6 +178,8 @@ opacity: 1;
 
 }
 
+section {margin: 1em 0em;}
+
 /*Buttons animation*/
 button {
   transition: all 3s;
@@ -224,7 +226,7 @@ footer {
 }
 
 .header-wrapper h2 {color:var(--link-color);
-  font-size: 1.6em;
+  font-size: 1em;
   color: black;
   margin: var(--white-space) 0;
 }
@@ -239,7 +241,7 @@ footer {
 }
 
 main {
-  padding: calc(2 * var(--white-space));
+  padding: 3em;
 }
 
 section {
@@ -263,6 +265,9 @@ ul {
   height: 15vw;
   width: 15vw;
 }
+
+
+a .link {text-align: center;}
 
 ul li:last-child {
   margin-right: 0;
@@ -324,6 +329,7 @@ ul li:last-child {
 /*button styling*/
 
 button {
+  border: 2px solid var(--color-1);
   padding: 1em 1.2em;
   border-radius: 1.5em;
   text-align: center;
@@ -352,29 +358,29 @@ h1 {
   font-family: var(--primary-font);
   font-weight: bold;
   text-transform: uppercase;
-
-  font-size: 1.8rem;
+  font-size: 1.6em;
 }
 
 /*Intro text/quote*/
 h2 {
   font-family: var(--secondary-font);
   font-weight: lighter;
-  text-transform: uppercase;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
 /*Paragraph*/
 p {
-  font-family: var(--secondary-font);
-  font-weight: lighter;
+  font-family: var(--primary-font);
+  font-weight: 300;
   font-size: 1em;
   padding-bottom: 1.5em;
 }
 
-p .font-name {font-size: 0.7em;}
+.font-details-p {margin-top: -1.5em;}
 
-p .font-color {font-size: 0.7em;}
+p .font-name {font-size: 0.6em; color: dimgray;}
+
+p .font-color {margin-top: 0.4em;font-size: 0.6em; color: dimgray;}
 
 strong {
   font-weight: bold;
@@ -389,6 +395,7 @@ a {
   color: var(--color-1);
   transition: all 0.2s;
   text-decoration: underline;
+  text-underline-position: under;
 }
 
 a:hover {font-style: italic;
