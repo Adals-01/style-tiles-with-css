@@ -1,4 +1,6 @@
-/* change these */
+
+
+/*Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Karla:wght@300;700&display=swap');
 /*
 font-family: 'Cormorant Garamond', serif;
@@ -10,50 +12,54 @@ font-family: 'Karla', sans-serif;
   box-sizing: border-box;
 }
 
-/* THIS IS ALL meant for editing. You might want to do it differently, 
-name the variables differently, 
-use the fonts in other ways in the font hierarchy etc. */
-
-/* change these */
 :root {
   --bg-color: White;
   --link-color: rgb(36, 36, 36);
   --link-hover-color: black;
+  --color-1: black;
+  --color-2: #f7b3a2;
+  --color-3: #13803a;
   --color-4: black;
   --color-5: white;
   --primary-font:'Karla', sans-serif;
-  --quote-font: font-family: 'Cormorant Garamond', serif;
+  --secondary-font:'Cormorant Garamond', serif;
   --font-style: normal;
   --text-transform: lowercase;
-  --secondary-font: "Droid Serif", serif;
   --main-text-color: #dar;
   --white-space: 1rem;
 }
-li {
+
+header {
+  display: grid;
+  text-align: right;
+  padding-top: 1.5em;
+}
+
+li a {
   list-style-type: none;
-  display: inline;
+  display: block;
 }
 
 nav a {
-  text-decoration: none;
-  padding: 2vw 2vw 0vw 2vw;
-  text-align: center;
+  padding: 1em;
+  text-align: left;
   display: inline-block;
   font-Size: 1.2em;
 }
 ul {padding: 0vw;}
 
 
-/* burger menu animation */
+nav {display: block}
 
-#interactive {display: block;
-  text-align: center;
-
+.logo {
+  display: block;
+  max-width: 16em;
+  float: right;
 }
 
+/* burger menu animation */
 #menuToggle
-{  display: block;
-  position: relative;
+{ position: absolute;
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
@@ -61,17 +67,16 @@ ul {padding: 0vw;}
 
 #menuToggle a
 {
-  text-decoration: none;
+  text-decoration: underline;
   color: #232323;
   transition: color 0.3s ease;
 }
 
 #menuToggle input
-{
-  display: block;
-  width: 40px;
-  height: 32px;
+{ width: 40px;
+  height: 34px;
   position: absolute;
+  display: block;
   top: -10px;
   left: -5px;
   cursor: pointer;
@@ -80,9 +85,18 @@ ul {padding: 0vw;}
   -webkit-touch-callout: none;
 }
 
+
 /*
  * Just a quick hamburger
  */
+
+ /*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
 #menuToggle span
 {
   display: block;
@@ -143,55 +157,43 @@ opacity: 1;
  * at the top left of the screen
  */
 #menu
-{
+{ display: grid;
+  text-align: left;
   position: absolute;
-  width: 50vw;
-  margin: -10vw -20vw 0vw 0vw;
-  padding: 50px;
-  padding-top: 125px;
-  
+  width: 100vw;
+  margin: -4em 0vw 0vw -4em;
+  padding:20vw;
   background: #ededed;
   list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-  
+  --webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
   transition: transform 0.4s ease-in-out;
 }
 
 #menu li
-{
-  padding: 10px 0;
-  font-size: 22px;
-  display: inline-flex;
+{ padding: 10px 0;
+  font-size: 1em;
+  display: inline;
 
 }
 
-/*
- * And let's slide it in from the left
- */
-#menuToggle input:checked ~ ul
-{
-  transform: none;
-}
 /*Buttons animation*/
-
 button {
-  
   transition: all 3s;
 }
-a {
-  transition: all 3s;
+li a {transition: all 3s;
 }
 button:hover {
-  background-color: var(--link-hover-color);
+  background-color: var(--color-1);
   color: var(--bg-color);
   transform: scale(1.03);
 }
 
 button:active {
   background-color: var(--bg-color);
+  color: var(--color-1);
+
 }
 
 a:hover {
@@ -212,25 +214,13 @@ main,
 footer {
   max-width: 1300px;
   margin: 0 auto;
-  padding: calc(2 * var(--white-space));
+  padding: calc( var(--white-space));
 }
 
 .full-width {
   background: var(--bg-color);
   color: white;
   width: 100%;
-}
-
-.header-wrapper h1 {
-  color: var(--link-color);
-  border-bottom: 0.03em var(--link-color) solid ;
-  font-family: "mrs-eaves-roman-all-petite-c", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-  font-size: 3rem;
-  text-transform: uppercase;
-  padding-right: 0.75em;
-  color: var(--link-color);
 }
 
 .header-wrapper h2 {color:var(--link-color);
@@ -269,10 +259,9 @@ ul {
 }
 
 .swatches li {
- border: 1px solid black;
   margin-right: 5vw;
   height: 15vw;
-  width: 20%;
+  width: 15vw;
 }
 
 ul li:last-child {
@@ -280,15 +269,15 @@ ul li:last-child {
 }
 
 .color-swatch-1 {
-  background-color: var(--bg-color);
+  background-color: var(--color-1);
 }
 
 .color-swatch-2 {
-  background-color: var(--link-color);
+  background-color: var(--color-2);
 }
 
 .color-swatch-3 {
-  background-color: var(--link-hover-color);
+  background-color: var(--color-3);
 }
 
 .color-swatch-4 {
@@ -305,7 +294,7 @@ ul li:last-child {
   margin-right: 5vw;
 }
 
-.texture-swatch-1 {
+/* .texture-swatch-1 {
   background: url(../img/pw_maze_white.png) top left repeat;
 }
 
@@ -320,7 +309,7 @@ ul li:last-child {
 .texture-swatch-3 {
   background: url(../img/white_paperboard.png) top left repeat;
 }
-
+ */
 .images ul {
   flex-direction: column;
   text-align: center;
@@ -335,25 +324,18 @@ ul li:last-child {
 /*button styling*/
 
 button {
-  
   padding: 1em 1.2em;
   border-radius: 1.5em;
-  background: var(--link-color);
   text-align: center;
   text-decoration: none;
   font: 1.25em/1 var(--primary-font);
   font-weight: bold;
   letter-spacing: 0.03em;
-  color: white;
   text-transform: uppercase;
   transition: all 0.2s ease;
   cursor: pointer;
   margin: 1em 1em 1em 0em;
-}
-
-.secondary-button {
-  background: var(--color-5);
-  color: black;
+  
 }
 
 button:focus,
@@ -366,22 +348,33 @@ button:focus-within {
   color: var(--main-text-color);
 }
 
-.h1-sample {
-  border-bottom: 0.03em var(--link-color) solid ;
-  font-size: 2.4rem;
+h1 {
+  font-family: var(--primary-font);
+  font-weight: bold;
+  text-transform: uppercase;
+
+  font-size: 1.8rem;
 }
 
-.h2-sample {
+/*Intro text/quote*/
+h2 {
   font-family: var(--secondary-font);
-  font-style: italic;
-  font-size: 1.25rem;
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: 1em;
 }
 
-p.typography-sample {
+/*Paragraph*/
+p {
   font-family: var(--secondary-font);
-  line-height: 1.5;
-  max-width: 960px;
+  font-weight: lighter;
+  font-size: 1em;
+  padding-bottom: 1.5em;
 }
+
+p .font-name {font-size: 0.7em;}
+
+p .font-color {font-size: 0.7em;}
 
 strong {
   font-weight: bold;
@@ -393,18 +386,13 @@ em {
 
 a {
   font-family: var(--primary-font);
-  color: var(--link-color);
-  text-decoration: none;
+  color: var(--color-1);
   transition: all 0.2s;
+  text-decoration: underline;
 }
 
-p[class*="font-details-"] {
-  margin-top: 0.5rem;
-  margin-bottom: calc(2 * var(--white-space));
-  font-size: 0.75rem;
-  font-family: var(--secondary-font);
-  color: #6f6f6f;
-}
+a:hover {font-style: italic;
+ }
 
 .adjectives ul {
   font-size: 2rem;

@@ -7,28 +7,24 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-
+<header>  
+  <nav>
+  <img class="logo" src="img/logo.svg">
+  <div id="menuToggle">
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
+    <ul id="menu">
+      <a href="#"><li>Home</li></a>
+      <a href="#"><li>Shop</li></a>
+      <a href="#"><li>About</li></a>
+      <a href="#"><li>Contact</li></a></ul></div>
+    </header>
   <body>
-    <div class="full-width header-wrapper">
-      <header>
-        <div class="interactive">
-        <img class="logo" src="img/logo.svg">
-        <h1>BIG TITLES</h1>
-        <nav></nav><ul id="menu">
-          <li>Home</li>
-         <li>About</li>
-          <li>Info</li>
-          <li>Contact</li>></ul></nav>
-        <div class="readMore"></div>
-      </div>
-        <h4>Version 1</h4>
-      </header>
-    </div>
-
     <main>
       <div class="column">
         <section class="swatches">
-          <h3 class="section-heading">Colour swatches</h3>
           <ul class="swatchgrid">
             <li class="color-swatch-1"></li>
             <li class="color-swatch-2"></li>
@@ -36,7 +32,7 @@
             <li class="color-swatch-4"></li>
             <!-- <li class="color-swatch-5"></li> -->
           </ul>
-        </section>
+<!--         </section>
         <section class="textures">
           <h3 class="section-heading">Textures</h3>
           <ul class="swatchgrid">
@@ -44,23 +40,12 @@
             <li class="texture-swatch-2"></li>
             <li class="texture-swatch-3"></li>
           </ul>
-        </section>
+        </section> -->
         <section class="buttons">
           <h3 class="section-heading">Buttons</h3>
           <div>
-            <button type="button" class="primary-button">SHOP NOW</button>
-            <button type="button" class="secondary-button">button</button>
-            <nav role="navigation">
-              <div id="menuToggle">
-                <input type="checkbox" />
-                <span></span>
-                <span></span>
-                <span></span>
-                <ul id="menu">
-                  <a href="#"><li>Home</li></a>
-                  <a href="#"><li>About</li></a>
-                  <a href="#"><li>Info</li></a>
-                  <a href="#"><li>Contact</li></a>
+            <button type="button" class="primary-button">Button</button>
+
           
         </section>
       </div>
@@ -68,16 +53,15 @@
 
       <div class="column">
         <section class="typography-main">
-          <h3 class="section-heading">Typography</h3>
           <h1 class="h1-sample">A sample header</h1>
           <p class="font-details-h1">
-            <span class="font-name">Font Name</span>,
-            <span class="font-color">#color value</span>
+            <span class="font-name">Karla bold - Title 1.8em</span>,
+            <span class="font-color">color 1</span>
           </p>
           <h2 class="h2-sample">An example of a sub header</h2>
           <p class="font-details-h2">
-            <span class="font-name">Font Name</span>,
-            <span class="font-color">#color value</span>
+            <span class="font-name">Cormoran Garamond - Quote / Header on colour background</span>,
+            <span class="font-color">color 1</span>
           </p>
           <p class="typography-sample">
             This sample paragraph has <strong>strong parts</strong> and
@@ -92,7 +76,7 @@
             <span class="font-color">#color value</span>
           </p>
           <a href="#" class="typography-sample"
-            >This is an example of a text link.</a
+            >Read more</a
           >
           <p class="font-details-a">
             <span class="font-name">Font Name</span>,
